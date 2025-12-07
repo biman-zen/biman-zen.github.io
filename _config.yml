@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: Zen Insights
+title: DS Zen Insights
 
 # Your name to show in the footer
 author: Biman Mondal
@@ -21,7 +21,7 @@ author: Biman Mondal
 
 navbar-links:
   About Me: "aboutme"
-  My Resume: "Resume"
+  My Resume: "resume"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
