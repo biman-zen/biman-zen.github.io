@@ -4,10 +4,6 @@ title: My Resume
 subtitle: What is my professional experience?
 ---
 
-## Biman S. Mondal
-
-_Vancouver, WA | U.S. Citizen | 564-235-5483 |_ [_E-mail_](http://biman.s.mondal@gmail.com) _|_ [_LinkedIN_](https://www.linkedin.com/in/bimanmondal/) _|_ [_Github_](https://github.com/biman-zen/FinalCapstone)
-
 ### EXECUTIVE SUMMARY
 
 Data science professional with a background in aerospace engineering. Recently completed a 500+ hour intensive data science certificate through Springboard. Successfully completed two capstone projects reviewed by industry experts. A proven track record of using data to solve complex problems with over a decade of experience in mechanical design analysis and MATLAB scripting. Passionate about leveraging analytical engineering skills and new data science expertise to deliver strategic insights from complex datasets.
