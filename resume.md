@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Resume
+title: Resume
 subtitle: What is my professional experience?
 ---
 
