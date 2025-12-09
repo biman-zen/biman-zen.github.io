@@ -5,7 +5,6 @@ subtitle: Why should you hire me?
 ---
 
 My name is Biman and I have the following qualities:
-
 - Inquirer
 - Explorer/Wanderer
 - Long distance runner

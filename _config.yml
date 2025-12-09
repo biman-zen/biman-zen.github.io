@@ -52,10 +52,9 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "biman.mondal@proton.mail"
-  github: 
-  twitter: daattali
-  youtube: "@daattali"
-  hackerrank: yourname
+  github: "https://github.com/biman-zen"
+  youtube: "@myytchannel"
+  hackerrank: "@biman_s_mondal"
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
 #  linkedin: daattali
@@ -100,7 +99,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "https://biman-zen.github.io/"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
