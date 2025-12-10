@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Yelp Reviews Sentiment Analysis
-subtitle: NLP using NLTK
+subtitle: Natural Language Processing using NLTK
 cover-img: 
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
-tags: [pandas, nltk, scikit-learn, classification analysis]
-author: 
+tags: [classification analysis, pandas, scikit-learn, nltk]
+tags: [naiive bayes, random forest]
 ---
 The goal of this project is to perform sentiment analysis ( to label a review is "positive", "negative", or "neutral" ) using natural language processing (NLP) on Yelp reviews dataset.
 
