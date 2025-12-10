@@ -23,7 +23,7 @@ navbar-links:
   About Me: "aboutme"
   Resume: "resume"
   Projects:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
+    - Vehicle Price Prediction Regression Modeling: "project1_used_car_prediction"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
