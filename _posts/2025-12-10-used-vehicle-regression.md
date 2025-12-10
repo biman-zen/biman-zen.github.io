@@ -2,11 +2,11 @@
 layout: post
 title: Used Car Price Prediction
 subtitle: Regression Analysis using Scikit-learn
-cover-img: /assets/img/path.jpg
+cover-img: #/assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [pandas, scikit-learn, regression analysis]
-author: Sharon Smith and Barry Simpson
+author: #Sharon Smith and Barry Simpson
 ---
 
 ![image](https://www.usatoday.com/gcdn/media/2018/06/14/USATODAY/usatsports/car-lot-square-e1461855298700.jpg?width=500&height=500&fit=crop&format=pjpg&auto=webp)  
