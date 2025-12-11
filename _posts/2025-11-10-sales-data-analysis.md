@@ -23,8 +23,9 @@ The sales team at Pens & Printers wanted to know which sales approach drives
 The Pandas library in Python was used to evaluate the comma-delimited file. The dataframe contains 8 columns and 15000 rows. The columns are: week|sales_method|customer_id|nb_sold| revenue|'years_as_customer'|'nb_site_visits'|'state'. Investigating datatypes shows that 3 categorical values: sales method, customer id, and state (location) of the customer. The numerical values include the number of weeks, the number of products sold, and revenue. There were 1074 missing values from the revenue column which were imputed via a linear‑regression model that leveraged the sales‑method indicator. Duing this ensured that the final analysis wasn’t biased by naïve mean‑filling.
 
 ### Exploratory Data Analysis
-The revenue is grouped by the sales method and plotted in the following bar chart. The results show that the Email sales method generates the majority of revenue at 51%, followed by email + calling at 33% of revenue, followed by just calling at 16% of revenue.
-![image]('/post_figures/nov_data_analysis/SalesMethod_Proportion_PieChart.png')
+The revenue is grouped by the sales method and plotted in the following bar chart. The results show that the Email sales method generates the majority of revenue at 51%, followed by email + calling at 33% of revenue, followed by just calling at 16% of revenue. 
+
+![image](/post_figures/nov_data_analysis/SalesMethod_Proportion_PieChart.png)
 
 ### Recommendation 
 	1. Measure both volume and value—the biggest revenue bucket isn’t always the most profitable per sale.
