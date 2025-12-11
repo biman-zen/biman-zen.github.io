@@ -8,4 +8,14 @@ share-img: /assets/img/path.jpg
 tags: [data analysis, pandas, seaborn]
 ---
 
-The sales team from Pens & Printers has requested an analysis of the effectiveness of the sales approaches on the new product line. Product sales data from the new stationery line has been provided in a comma-delimited file. The goal of the report is to extract useful information from the data provided to answer relevant information about revenue and sales approach, and other insights. 
+## Introduction
+The sales team at Pens & Printers wanted to know which sales approach drives the most revenue for their newly launched stationery line and how that revenue evolves over the first six weeks after launch. By digging into a 15 000‑row, eight‑column dataset, the goal was to surface actionable insights that could sharpen the sales strategy and lift the bottom line.
+
+## Analysis
+Technical note: Missing revenue values (≈ 7 % of rows) were imputed via a linear‑regression model that leveraged the sales‑method indicator, ensuring the final analysis wasn’t biased by naïve mean‑filling.
+
+## Recommendation 
+	1. Measure both volume and value—the biggest revenue bucket isn’t always the most profitable per sale.
+	2. Layer outreach—start cheap and scalable (email), then add a high‑touch element (call) for the most promising leads.
+Let the data speak—even a modest‑size dataset can reveal nuanced patterns that reshape your go‑to‑market playbook.
+![Uploading image.png…]()
