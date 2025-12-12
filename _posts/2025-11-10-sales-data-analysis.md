@@ -25,9 +25,8 @@ The Pandas library in Python was used to evaluate the comma-delimited file. The 
 ### Exploratory Data Analysis
 The revenue is grouped by the sales method and plotted in the following bar chart. The results show that the Email sales method generates the majority of revenue at 51%, followed by email + calling at 33% of revenue, followed by just calling at 16% of revenue.
 
-[![image](_posts/post_figures/nov_data_analysis/KDE_revenue_distribution.png)]
-[![image]({{"Total_Revenue_acrossWeeks.png" | relative_url}})]
-![Revenue Chart]({{"/assets/img/Total_Revenue_bySales.jpg" | relative_url }})
+![Sales Chart]({{"_posts/post_figures/nov_data_analysis/KDE_revenue_distribution.png" | relative_url }})
+![Revenue Chart]({{"/assets/post_figures/11-10-analysis/Revenue_by_sales_method_box.png" | relative_url }})
 
 ### Recommendation 
 	1. Measure both volume and value—the biggest revenue bucket isn’t always the most profitable per sale.
