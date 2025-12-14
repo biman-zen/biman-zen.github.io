@@ -31,27 +31,27 @@ It just so happens, for this dataset, the revenue and sold are linearly correlat
 ![Regression Plot]({{"/assets/post_figures/biz-data-analysis/regression_plot_revenue_vs_nb_sold.png" | relative_url }}){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
 These missing values are <u>imputed via a linear‑regression model</u>. The main steps are shown in the code listed below.  
-<pre>
-# Use stats.linregress to get the parameters of the lines above
-# Print slope and intercept of each curve
-mydict=dict()
-for method in w_revenue['sales_method'].unique():
-    print('\nMethod:', method)
-    foo=w_revenue.loc[w_revenue['sales_method']==method,['nb_sold','revenue']]
-    slope, intercept, r_value, p_value, std_err = stats.linregress(foo['nb_sold'], foo['revenue'])  
-    # Save dictionary
-    mydict[method] = [slope, intercept]
+	'''python  
+	# Use stats.linregress to get the parameters of the lines above
+	# Print slope and intercept of each curve
+	mydict=dict()
+	for method in w_revenue['sales_method'].unique():
+		print('\nMethod:', method)
+		foo=w_revenue.loc[w_revenue['sales_method']==method,['nb_sold','revenue']]
+		slope, intercept, r_value, p_value, std_err = stats.linregress(foo['nb_sold'], foo['revenue'])  
+		# Save dictionary
+		mydict[method] = [slope, intercept]
 
-# Use the dictionary to apply the prediction of the revenue
-def pred_rev(row):
-    'Predict revenue for nan values given sales_method and number sold'
-    x, b = mydict[row['sales_method']]
-    return row['nb_sold']*x + b
+	# Use the dictionary to apply the prediction of the revenue
+	def pred_rev(row):
+		'Predict revenue for nan values given sales_method and number sold'
+		x, b = mydict[row['sales_method']]
+		return row['nb_sold']*x + b
 
-# Assign prediction value to dataframe with revenue as NaN
-no_revenue['pred_revenue'] = df.apply(pred_rev, axis=1)
-df.loc[no_revenue.index,'revenue'] = no_revenue['pred_revenue']
-</pre>  
+	# Assign prediction value to dataframe with revenue as NaN
+	no_revenue['pred_revenue'] = df.apply(pred_rev, axis=1)
+	df.loc[no_revenue.index,'revenue'] = no_revenue['pred_revenue']
+	'''   
 In order to fill the null values, the null data rows are separated from the dataset. Then a linear regression model using the statsmodels library is used to determine the slope and intercept; this is saved to a dictionary. Lastly, the slope and intercept are used to back calculate the revenue. Doing this ensured that the final analysis wasn't biased by naïve mean‑filling.
 
 ### Data Analysis
@@ -67,8 +67,8 @@ A count of the sales method shows that sales by 'Email' is the primary method at
 Aggregating the results show that the Email sales method generates the majority of revenue at 51%, followed by email + calling at 33% of revenue, followed by just calling at 16% of revenue.
 ![Revenue Chart]({{"/assets/post_figures/biz-data-analysis/Total_Revenue_bySales.png" | relative_url }}){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
-### Recommendation  
-Based on the analysis above, the recommended using the 'Email' sales method as it yields a much higher average revenue than 'Call'. The metric to monitor in improving sales across weeks is 'Average Revenue/Sale'. 
+### Recommendation    
+The 'Call' method is the most likely sales method but results in the lowest revenue output. Based on the analysis above, the recommendation is to use the 'Email' sales method as it yields a much higher average revenue than 'Call'. The metric to monitor in improving sales across weeks is 'Average Revenue/Sale'. 
 
 >*Find the full [ipython journal file](https://github.com/biman-zen/springboard_mini_projects/blob/main/data%20analysis/DA_Practical_Exam.ipynb) and [analysis presentation](https://github.com/biman-zen/springboard_mini_projects/blob/main/data%20analysis/DA_Practical_Exam_Presentation.pdf) in the github repository.*
 
