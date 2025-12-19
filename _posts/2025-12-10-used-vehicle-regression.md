@@ -19,21 +19,22 @@ This ML project uses the Pandas Python library to create and modify the dataset 
 
 Many of the records of the dataset are missing and require imputing or dealing with them another way. Using the MSNO package, the following shows the missing-ness of dataset. Note that the "County" column is completely empty; there is a "Region" column but a CL region is not the same as a State County.
 
-![RegressionPlot]({{"/assets/post_figures/used-car-regression/missing_values.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
+![Missing_values]({{"/assets/post_figures/used-car-regression/missing_values.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
 
 Attempting to fill the dataset with missing data would require too much time. Only columns associated with the vehicle itself were, dropping location information, image, and description information. Other information regarding VIN and color did not seem important. Here is a final view of the dataset after the data wrangling process.
 
 In the exploratory section, the dataset reveals more about the dataset. There are nearly 20k+ unique models in the directory because of Craigslist free input area. The price seems to centered around 20k and most of the vehicles were manufactured after 2000. The median odometer is around 100k miles and the common sizes of the engine is (4,6, and 8) cylinders.
+![Histogram]({{"/assets/post_figures/used-car-regression/histogram.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
 
-![Histogram]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"
+The top models in the directory are Ford F-150 and GMC 2500; both US trucks. 
+![Histogram]({{"/assets/post_figures/used-car-regression/top_10_model_makes.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"
 
 To simplify modeling, the final dataset included the top 60 used car models. This was chosen because most of the dataset is covered by 60 models.
+![Regression_Plot]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
 
-![Regression Plot]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"
-
-The down sampled dataset reduces to around XXXXX rows.
+The down sampled dataset reduces to ~284k rows.
 With the cleaned dataset, four different machine learning algorithms: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN), and Random Forest Regression were used in conjunction with 5-fold cross-validation to determine model performance.
 
-GridSearchCV was used to perform hyperparameter tuning of RF and KNN models to use the optimum parameters. The top-performing model achieved a cross-validated MAPE of 0.48. For a detailed discussion of the analysis refer to the [project gihub repository](https://github.com/biman-zen/springboard_second_capstone/tree/main) and the [project report](https://github.com/biman-zen/springboard_second_capstone/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
+GridSearchCV was used to perform hyperparameter tuning of RF and KNN models to use the optimum parameters. The top-performing model achieved a cross-validated MAPE of 0.48. For a detailed discussion of the analysis refer to the [project gihub repository](https://github.com/biman-zen/ml_regression_used_vehicle) and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
 
 All of these challenges were attempted with my know-how at the time. Looking back, I see many improvements that can be attempted.
