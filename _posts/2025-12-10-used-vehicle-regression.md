@@ -26,13 +26,21 @@ Attempting to fill the dataset with missing data would require too much time. On
 In the exploratory section, the dataset reveals more about the dataset. There are nearly 20k+ unique models in the directory because of Craigslist free input area. The price seems to centered around 20k and most of the vehicles were manufactured after 2000. The median odometer is around 100k miles and the common sizes of the engine is (4,6, and 8) cylinders.
 ![Histogram]({{"/assets/post_figures/used-car-regression/histogram.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
 
-The top models in the directory are Ford F-150 and GMC 2500; both US trucks. 
-![Histogram]({{"/assets/post_figures/used-car-regression/top_10_model_makes.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"
+The top four models in the dataset all US trucks with Ford and Chevy the top makes. 
+![top10]({{"/assets/post_figures/used-car-regression/top_10_model_makes.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
 
-To simplify modeling, the final dataset included the top 60 used car models. This was chosen because most of the dataset is covered by 60 models.
-![Regression_Plot]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
+The model names required standardization to simplify the modeling e.g. a model called 'silverado 1500'  'silverado' should be equivalent. The following code snippet shows how the model names were condensed. 
+	```
+	# Combine the f-250 model segment
+	vehicles.loc[vehicles.model.str.contains('f.250.'), 'model']
+	vehicles.loc[(vehicles.model.str.contains('.f*.250.')) & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
+	vehicles.loc[vehicles.model.str.contains('f*.250.') & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
+	vehicles.loc[vehicles.model.str.contains('f250') & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
 
-The down sampled dataset reduces to ~284k rows.
+To simplify modeling, the final dataset included the top 60 used car models as it covers the majority of the dataset.
+![Regression_Plot]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:0%; height: auto; display: block; margin: 0 auto;"}
+
+The down sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%.
 With the cleaned dataset, four different machine learning algorithms: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN), and Random Forest Regression were used in conjunction with 5-fold cross-validation to determine model performance.
 
 GridSearchCV was used to perform hyperparameter tuning of RF and KNN models to use the optimum parameters. The top-performing model achieved a cross-validated MAPE of 0.48. For a detailed discussion of the analysis refer to the [project gihub repository](https://github.com/biman-zen/ml_regression_used_vehicle) and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
