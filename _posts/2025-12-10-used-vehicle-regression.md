@@ -44,3 +44,5 @@ GridSearchCV was used to perform hyperparameter tuning of RF and KNN models to u
 All of these challenges were attempted with my know-how at the time. Looking back, I see many improvements that can be attempted.
 For a detailed discussion of the analysis refer to the [project gihub repository](https://github.com/biman-zen/springboard_second_capstone/tree/main) and the [project report](https://github.com/biman-zen/springboard_second_capstone/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
 
+
+>>>>>>> 231967b3512f3c5fbcb966107034edd88a82339e
