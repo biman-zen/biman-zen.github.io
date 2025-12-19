@@ -10,13 +10,14 @@ author: Biman Mondal
 ---
 
 ![image](https://www.usatoday.com/gcdn/media/2018/06/14/USATODAY/usatsports/car-lot-square-e1461855298700.jpg?width=500&height=500&fit=crop&format=pjpg&auto=webp){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
-
-This machine learning project tackles the challenge of predicting used car prices.  The original dataset was scraped from Craigslist and Carvana in 2021, available from [Kaggle](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data).This project was a capstone project part of the Springboard Data Science course. 
+### Introduction
+This machine learning project tackles the challenge of predicting used car prices. The original dataset was scraped from Craigslist and Carvana in 2021, available from [Kaggle](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data). This project was a capstone project part of the Springboard Data Science course. 
 
 The motivation of this ML project was to use a real world dataset to perform all the steps involved in the data science process. A significant portion of this work focused on tidying the scraped raw data for modeling. The dataset includes 426k+ rows of values and 26 columns.
 
 This ML project uses the Pandas Python library to create and modify the dataset and Scikit-Learn to perform the machine learning. Craigslist is a well-known text based online platform for posting local ads. The dataset was scraped from Craigslist and also included some CarMax data mixed as well.  The freeform input that the site allows results in numerous unintended errors. There are misspellings of the model and make, irregularities in price, and general missing-ness of data. The challenges of wrangling the data were not fully appreciated until well into the project.
 
+### Preparing the Dataset
 Many of the records of the dataset are missing and require imputing or dealing with them another way. Using the MSNO package, the following shows the missing-ness of dataset. Note that the "County" column is completely empty; there is a "Region" column but a CL region is not the same as a State County.
 
 ![Missing_values]({{"/assets/post_figures/used-car-regression/missing_values.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
@@ -30,17 +31,19 @@ The top four models in the dataset all US trucks with Ford and Chevy the top mak
 ![top10]({{"/assets/post_figures/used-car-regression/top_10_model_makes.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
 
 The model names required standardization to simplify the modeling e.g. a model called 'silverado 1500'  'silverado' should be equivalent. The following code snippet shows how the model names were condensed. 
-	```
-	# Combine the f-250 model segment
-	vehicles.loc[vehicles.model.str.contains('f.250.'), 'model']
-	vehicles.loc[(vehicles.model.str.contains('.f*.250.')) & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
-	vehicles.loc[vehicles.model.str.contains('f*.250.') & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
-	vehicles.loc[vehicles.model.str.contains('f250') & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
+    
+    # Combine the f-250 model segment
+    vehicles.loc[vehicles.model.str.contains('f.250.'), 'model']
+    vehicles.loc[(vehicles.model.str.contains('.f*.250.')) & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
+    vehicles.loc[vehicles.model.str.contains('f*.250.') & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
+    vehicles.loc[vehicles.model.str.contains('f250') & (vehicles.manufacturer=='ford'),'model'] = 'f-250'
 
 To simplify modeling, the final dataset included the top 60 used car models as it covers the majority of the dataset.
-![Regression_Plot]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:0%; height: auto; display: block; margin: 0 auto;"}
+![unique_models]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:0%; height: auto; display: block; margin: 0 auto;"}
 
 The down sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%.
+
+### Modeling
 With the cleaned dataset, four different machine learning algorithms: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN), and Random Forest Regression were used in conjunction with 5-fold cross-validation to determine model performance.
 
 GridSearchCV was used to perform hyperparameter tuning of RF and KNN models to use the optimum parameters. The top-performing model achieved a cross-validated MAPE of 0.48. For a detailed discussion of the analysis refer to the [project gihub repository](https://github.com/biman-zen/ml_regression_used_vehicle) and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
