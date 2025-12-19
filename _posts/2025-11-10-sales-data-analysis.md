@@ -31,8 +31,8 @@ It just so happens, for this dataset, the revenue and sold are linearly correlat
 ![Regression Plot]({{"/assets/post_figures/biz-data-analysis/regression_plot_revenue_vs_nb_sold.png" | relative_url }}){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
 These missing values are <u>imputed via a linear‑regression model</u>. The main steps are shown in the code listed below.  
-'''python
-  
+
+
 	# Use stats.linregress to get the parameters of the lines above
 	# Print slope and intercept of each curve
 	mydict=dict()
@@ -51,9 +51,8 @@ These missing values are <u>imputed via a linear‑regression model</u>. The mai
 
 	# Assign prediction value to dataframe with revenue as NaN
 	no_revenue['pred_revenue'] = df.apply(pred_rev, axis=1)
-	df.loc[no_revenue.index,'revenue'] = no_revenue['pred_revenue']
+	df.loc[no_revenue.index,'revenue'] = no_revenue['pred_revenue']   
 
-'''   
 In order to fill the null values, the null data rows are separated from the dataset. Then a linear regression model using the statsmodels library is used to determine the slope and intercept; this is saved to a dictionary. Lastly, the slope and intercept are used to back calculate the revenue. Doing this ensured that the final analysis wasn't biased by naïve mean‑filling.
 
 ### Data Analysis
