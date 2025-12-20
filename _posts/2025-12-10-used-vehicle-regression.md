@@ -59,30 +59,29 @@ Regression models: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN
 	rf = RandomForestRegressor(n_jobs=-1, random_state=30)
 	# Grid search CV defaults to a kFold = 5
 	grid_rf = GridSearchCV(estimator=rf, cv = 5, 
-							   param_grid=params, 
-							   n_jobs=-1, verbose=1, scoring='neg_mean_absolute_percentage_error')
+                        param_grid=params, 
+                        n_jobs=-1, verbose=1, 
+                        scoring='neg_mean_absolute_percentage_error')
 
 It is common to use RMSE as the standard error, but mean absolute error was chosen so the error value is a decimal.
 
 <div style="text-align: center;">
-
 Root mean square error:  
 $
 \text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}
 $ 
-
 Mean absolute percent error:    
 $
 \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right| 
 $
-
 $A_i$ is actual value and $P_i$ is predicted value.
 </div>    
+
 *Note that MAPE is scaled producing relative error from 0 to 1. Although stated as percent error, sklearn MAPE requires scaling by 100 to become a percentage.*
 
 The four models choses, produce the following errors; plotted with the error standard deviation.
+
 ![results]({{"/assets/post_figures/used-car-regression/model_results.png" | relative_url }})
 
-For more details regarding the analysis, refer to the [project's GitHub repository](https://github.com/biman-zen/ml_regression_used_vehicle) for the Jupyter Notebooks and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
+For more details regarding the analysis, refer to the [project's GitHub repository](https://github.com/biman-zen/ml_regression_used_vehicle) for the Jupyter Notebooks and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf). All of these challenges were attempted with my know-how at the time. Looking back, I see many improvements that can be attempted. 
 
-All of these challenges were attempted with my know-how at the time. Looking back, I see many improvements that can be attempted.
