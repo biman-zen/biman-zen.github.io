@@ -30,7 +30,7 @@ In the exploratory section, the dataset reveals more about the dataset. There ar
 The top four models in the dataset all US trucks with Ford and Chevy the top makes. 
 ![top10]({{"/assets/post_figures/used-car-regression/top_10_model_makes.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
 
-The model names required standardization to simplify the modeling e.g. a model called 'silverado 1500' and 'silverado' should be equivalent. The following code snippet shows how the model names were condensed. 
+The model names required standardization to simplify the modeling e.g. a model called 'silverado 1500' and 'silverado' should be equivalent. The following code snippet shows how each model names were condensed. 
     
     # Combine the f-250 model segment
     vehicles.loc[vehicles.model.str.contains('f.250.'), 'model']
@@ -41,11 +41,8 @@ The model names required standardization to simplify the modeling e.g. a model c
 To simplify modeling, the final dataset included the top 60 used car models as it covers the majority of the dataset.
 ![unique_models]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
 
-The down sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%.
-
 ### Modeling
-### Modeling
-With a cleaned dataset, the categorical columns were transformed using *OneHotEncoding*. This increases the columns of the dataset because the each category becomes its own column. 
+The down sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%. With a cleaned dataset, the categorical columns were transformed using *OneHotEncoding*. This increases the columns of the dataset because the each category becomes its own column. 
 
 The numerical values in the histograms above demonstrate the different scales of each feature. The odometer is on the order of 10^5 while, year is on the order of 10^3, and the cylinders is 10^0 order. The scale of the features can affect the performance of certain models like linear regression and SVM. Below is the transformed columns into a normal distribution using *QuantileTransformer*.  
 ![quant_trans]({{"/assets/post_figures/used-car-regression/quant_norm_num_data.png" | relative_url }})
@@ -84,7 +81,7 @@ $A_i$ is actual value and $P_i$ is predicted value.
 *Note that MAPE is scaled producing relative error from 0 to 1. Although stated as percent error, sklearn MAPE requires scaling by 100 to become a percentage.*
 
 The four models choses, produce the following errors; plotted with the error standard deviation.
-![results]({{"/assets/post_figures/used-car-regression/quant_norm_num_data.png" | relative_url }})
+![results]({{"/assets/post_figures/used-car-regression/model_results.png" | relative_url }})
 
 For more details regarding the analysis, refer to the [project's GitHub repository](https://github.com/biman-zen/ml_regression_used_vehicle) for the Jupyter Notebooks and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf).
 
