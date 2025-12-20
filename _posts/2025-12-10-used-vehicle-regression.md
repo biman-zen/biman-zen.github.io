@@ -65,7 +65,6 @@ Regression models: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN
 
 It is common to use RMSE as the standard error, but mean absolute error was chosen so the error value is a decimal.
 
-<div style="text-align: center;">
 
 Root mean square error:  
 
@@ -78,9 +77,8 @@ Mean absolute percent error:
 $
 \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right| 
 $
-$A_i$ is actual value and $P_i$ is predicted value.
 
-</div>    
+$A_i$ is actual value and $P_i$ is predicted value.
 
 *Note that MAPE is scaled producing relative error from 0 to 1. Although stated as percent error, sklearn MAPE requires scaling by 100 to become a percentage.*
 
