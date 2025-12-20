@@ -68,15 +68,12 @@ It is common to use RMSE as the standard error, but mean absolute error was chos
 
 Root mean square error:  
 
-$
-\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}
-$
+
+$\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}$
 
 Mean absolute percent error:  
 
-$
-\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right| 
-$
+$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right|$
 
 $A_i$ is actual value and $P_i$ is predicted value.
 
@@ -84,7 +81,7 @@ $A_i$ is actual value and $P_i$ is predicted value.
 
 The four models choses, produce the following errors; plotted with the error standard deviation.
 
-![results]({{"/assets/post_figures/used-car-regression/model_results.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
+![results]({{"/assets/post_figures/used-car-regression/model_results.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
 
 For more details regarding the analysis, refer to the [project's GitHub repository](https://github.com/biman-zen/ml_regression_used_vehicle) for the *Jupyter notebooks* and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf). All of these challenges were attempted with my know-how at the time. Looking back, I see many improvements that can be attempted. 
 
