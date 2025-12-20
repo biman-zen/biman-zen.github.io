@@ -45,7 +45,7 @@ To simplify modeling, the final dataset included the top 60 used car models as i
 The down sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%. With a cleaned dataset, the categorical columns were transformed using *OneHotEncoding*. This increases the columns of the dataset because the each category becomes its own column. 
 
 The numerical values in the histograms above demonstrate the different scales of each feature. The odometer is on the order of 10^5 while, year is on the order of 10^3, and the cylinders is 10^0 order. The scale of the features can affect the performance of certain models like linear regression and SVM. Below is the transformed columns into a normal distribution using *QuantileTransformer*.  
-![quant_trans]({{"/assets/post_figures/used-car-regression/quant_norm_num_data.png" | relative_url }}){:style="width:75%; height: auto; display: block; margin: 0 auto;"}
+![quant_trans]({{"/assets/post_figures/used-car-regression/quant_norm_num_data.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
 
 Regression models: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN), and Random Forest Regression were chosen to fit the data and compare error rates. In order to minimize overfitting to the data, the model used 5-fold cross-validation. In addition to CV, for models like RF and KNN GridSearchCV was used to perform hyperparameter optimization; i.e. to find the parameter combination yielding best error results.
 
@@ -68,14 +68,18 @@ It is common to use RMSE as the standard error, but mean absolute error was chos
 <div style="text-align: center;">
 
 Root mean square error:  
+
 $
 \text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}
-$ 
-Mean absolute percent error:    
+$
+
+Mean absolute percent error:  
+
 $
 \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right| 
 $
 $A_i$ is actual value and $P_i$ is predicted value.
+
 </div>    
 
 *Note that MAPE is scaled producing relative error from 0 to 1. Although stated as percent error, sklearn MAPE requires scaling by 100 to become a percentage.*
