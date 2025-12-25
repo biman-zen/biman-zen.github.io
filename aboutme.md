@@ -4,8 +4,8 @@ title: About me
 subtitle: Who am I?
 ---
 
-Hi there, I'm Biman (pronounced *bīmān*).   
-Here are a few of my qualities:  
+Hi there, I'm Biman (*bīmān*).   
+Here are a few of my qualities:
 - Inquirer
 - Explorer/Wanderer
 - Long distance runner

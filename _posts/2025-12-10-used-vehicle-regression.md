@@ -11,7 +11,7 @@ author: Biman Mondal
 ![image](https://www.usatoday.com/gcdn/media/2018/06/14/USATODAY/usatsports/car-lot-square-e1461855298700.jpg?width=500&height=500&fit=crop&format=pjpg&auto=webp){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
 ### Introduction
-This machine learning project tackles the challenge of predicting used car prices. The original dataset was scraped from Craigslist and Carvana in 2021, available from [Kaggle](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data). This project was a capstone project part of the Springboard Data Science course. 
+This machine learning project tackles the challenge of predicting used car prices. The original dataset was scraped from Craigslist and Carvana in 2021, available from [Kaggle](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data). This project was part of the Springboard Data Science course capstone projects. 
 
 The motivation of this ML project was to use a real world dataset to perform all the steps involved in the data science process. A significant portion of this work focused on tidying the scraped raw data for modeling. The dataset includes 426k+ rows of values and 26 columns.
 
@@ -42,7 +42,7 @@ To simplify modeling, the final dataset included the top 60 used car models as i
 ![unique_models]({{"/assets/post_figures/used-car-regression/unique_models_record.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
 
 ### Modeling
-The down sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%. With a cleaned dataset, the categorical columns were transformed using *OneHotEncoding*. This increases the columns of the dataset because the each category becomes its own column. 
+The down-sampled dataset reduces to ~284k rows; reducing the original dataset by nearly 40%. With a cleaned dataset, the categorical columns were transformed using *OneHotEncoding*. This increases the columns of the dataset because the each category becomes its own column. 
 
 The numerical values in the histograms above demonstrate the different scales of each feature. The odometer is on the order of 10^5 while, year is on the order of 10^3, and the cylinders is 10^0 order. The scale of the features can affect the performance of certain models like linear regression and SVM. Below is the transformed columns into a normal distribution using *QuantileTransformer*.  
 ![quant_trans]({{"/assets/post_figures/used-car-regression/quant_norm_num_data.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
@@ -65,9 +65,7 @@ Regression models: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN
 
 It is common to use RMSE as the standard error, but mean absolute error was chosen so the error value is a decimal.
 
-
 Root mean square error:  
-
 
 $\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}$
 
@@ -79,9 +77,12 @@ $A_i$ is actual value and $P_i$ is predicted value.
 
 *Note that MAPE is scaled producing relative error from 0 to 1. Although stated as percent error, sklearn MAPE requires scaling by 100 to become a percentage.*
 
-The four models choses, produce the following errors; plotted with the error standard deviation.
+### Results
+The four models chosen, produce the following errors; plotted with the standard deviation. After transforming and normalizing the data, the linear regression 5-fold CV results are reduced from 85% to 69%. Ridge regression yields the same error as the LR. K-nearest neighbor model produced the second best model with 5-CV MAPE of 48%. Random Forest produces the best model with 5-fold CV MAPE of 46% but also took the longest (over 2 minutes).
 
 ![results]({{"/assets/post_figures/used-car-regression/model_results.png" | relative_url }}){:style="width:50%; height: auto; display: block; margin: 0 auto;"}
+
+The price prediction error rate of below 50% was achieved with the most common car 60 models from the dataset. Post-analysis, the price prediction errors in the models seem to be large, however this is due to the complexity of the dataset. Since each model price depends on year and options (like AWD) it is challenging to precisely generate the exact amount. This is a complex dataset and given the scope of the project, a lot of data needed to be omitted just to create the models. With more time, a more granular approach could be taken by modeling each car model separately. 
 
 For more details regarding the analysis, refer to the [project's GitHub repository](https://github.com/biman-zen/ml_regression_used_vehicle) for the *Jupyter notebooks* and the [project report](https://github.com/biman-zen/ml_regression_used_vehicle/blob/main/CapstoneII_FinalReport_CLUsedCarDataset.pdf). All of these challenges were attempted with my know-how at the time. Looking back, I see many improvements that can be attempted. 
 
