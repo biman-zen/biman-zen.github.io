@@ -3,7 +3,7 @@ layout: post
 title: Prediction of Used Vehicle Price
 subtitle: Regression Analysis using Scikit-learn
 cover-img: /assets/img/used_car.png
-thumbnail-img: /assets/img/thumb.png
+thumbnail-img: /assets/img/count_plot_cdf.png
 share-img: /assets/img/path.jpg
 tags: [pandas, scikit-learn, regression analysis]
 author: Biman Mondal
