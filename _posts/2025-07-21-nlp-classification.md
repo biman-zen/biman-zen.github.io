@@ -2,8 +2,8 @@
 layout: post
 title: Yelp Reviews Sentiment Analysis
 subtitle: Natural Language Processing using NLTK
-cover-img: 
-thumbnail-img: /assets/img/thumb.png
+cover-img: https://sbmi.uth.edu/blog/imgs/14-word-cloud-3-351x195.jpg
+thumbnail-img: https://sbmi.uth.edu/blog/imgs/14-word-cloud-3-351x195.jpg
 share-img: /assets/img/path.jpg
 tags: [classification analysis, pandas, scikit-learn, nltk]
 ---
