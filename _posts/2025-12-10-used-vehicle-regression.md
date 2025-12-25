@@ -2,13 +2,12 @@
 layout: post
 title: Prediction of Used Vehicle Price
 subtitle: Regression Analysis using Scikit-learn
-cover-img: #/assets/img/path.jpg
+cover-img: /assets/img/used_car.png
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [pandas, scikit-learn, regression analysis]
 author: Biman Mondal
 ---
-![image](https://www.usatoday.com/gcdn/media/2018/06/14/USATODAY/usatsports/car-lot-square-e1461855298700.jpg?width=500&height=500&fit=crop&format=pjpg&auto=webp){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
 ### Introduction
 This machine learning project tackles the challenge of predicting used car prices. The original dataset was scraped from Craigslist and Carvana in 2021, available from [Kaggle](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data). This project was part of the Springboard Data Science course capstone projects. 
@@ -67,11 +66,11 @@ It is common to use RMSE as the standard error, but mean absolute error was chos
 
 Root mean square error:  
 
-$\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}$
+$$\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}$$
 
 Mean absolute percent error:  
 
-$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right|$
+$$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right|$$
 
 $A_i$ is actual value and $P_i$ is predicted value.
 
