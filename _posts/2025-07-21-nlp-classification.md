@@ -21,9 +21,7 @@ There's little data wrangligng required for text based datasets for NLP in compa
 Normalization is the process that brings words into a standard format. These tokens can be words but can also be larger or smaller depending on the strategy. These token words can be further standardized using a method called lemmatization i.e. reducing the word to its root base form, as found in a dictionary. Standardization involves lower casing, removing stop-words, and performing lemmatization. The following is a code snippet of python code on standardizing the review text. For each review, the text is lower-cased, then the punctuations and stop words are removed, and then each word is lemmatized. 
 
 '''python
-
 def preprocess_text(text):
-
     # Tokenize the text
     tokens = word_tokenize(text.lower())
 
