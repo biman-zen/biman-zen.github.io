@@ -22,25 +22,25 @@ Normalization is the process that brings words into a standard format. These tok
 
 '''python
 
-    def preprocess_text(text):
+def preprocess_text(text):
 
-        # Tokenize the text
-        tokens = word_tokenize(text.lower())
+    # Tokenize the text
+    tokens = word_tokenize(text.lower())
 
-        # Remove stop words and punctuations in the tokens list
-        stp_wrds_puncts = list()
-        stp_wrds_puncts.append(string.punctuation)
-        stp_wrds_puncts.extend(stopwords.words('english'))
-        filtered_tokens = [token for token in tokens if token not in stp_wrds_puncts]
-        
-        # Lemmatize the tokens
-        lemmatizer = WordNetLemmatizer()
-        lemmatized_tokens = [lemmatizer.lemmatize(token) for token in filtered_tokens]
+    # Remove stop words and punctuations in the tokens list
+    stp_wrds_puncts = list()
+    stp_wrds_puncts.append(string.punctuation)
+    stp_wrds_puncts.extend(stopwords.words('english'))
+    filtered_tokens = [token for token in tokens if token not in stp_wrds_puncts]
+    
+    # Lemmatize the tokens
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_tokens = [lemmatizer.lemmatize(token) for token in filtered_tokens]
 
-        # Join the tokens back into a string
-        processed_text = ' '.join(lemmatized_tokens)
+    # Join the tokens back into a string
+    processed_text = ' '.join(lemmatized_tokens)
 
-        return processed_text
+    return processed_text
 '''
 
 #### BOW and TF-IDF 
