@@ -64,12 +64,10 @@ Regression models: Linear Regression, Ridge Regression, K-Nearest Neighbors (KNN
 
 It is common to use RMSE as the standard error, but mean absolute error was chosen so the error value is a decimal.
 
-Root mean square error:  
-
+Root mean square error:   
 $$\text{RMSE} = \sqrt{\frac{\sum_{i=1}^{N} (P_i - A_i)^2}{N}}$$
 
-Mean absolute percent error:  
-
+Mean absolute percent error:    
 $$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{A_i - P_i}{A_i} \right|$$
 
 $A_i$ is actual value and $P_i$ is predicted value.
