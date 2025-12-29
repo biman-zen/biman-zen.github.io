@@ -10,9 +10,7 @@ Here are a few of my qualities:
 - Explorer/Wanderer
 - Long distance runner
 - Animal Lover
+![hiking]({{"/assets/img/hiking_digital.png" | relative_url }}){:style="width: 40%; height: auto; display: block; margin: 0 auto;"}
 
 ### My story
-I am a graduate of Purdue University in Aerospace Engineer with a MSc. (2012) and BSc. (2010). I have spent over 12 years in the defense industry performing finite element analysis (FEA) on structural designs. Finite element analysis involves discretizing 3D geometry into elements to perform various types of analyses (stress, modal, dynamic, etc.). Depending on the size of the model, FEA can generate volumes of numerical data. Tidying that data and visualizing it is cruicial. I performed this post-analysis data wrangling with Matlab and Excel. Having to parse through various files required me to write extensive Matlab scripts. Through years of exposure, I have become adept at making sense of messy engineering data.  
-
-
-![hiking]({{"/assets/img/hiking_digital.png" | relative_url }}){:style="width: 50%; height: auto; display: block; margin: 0 auto;"}
+I hold an M.Sc. (2012) and B.Sc. (2010) in Aerospace Engineering from Purdue University. For over 12 years, I have worked in the defense industry, specializing in Finite Element Analysis (FEA) on complex structural designs. FEA involves discretizing 3D geometry into elements to perform various design evaluations (stress, modal, dynamic, etc.). Depending on the size of the model, FEA can generate volumes of numerical data. I leverage extensive MATLAB scripting and Excel to wrangle, tidy, and visualize these structural analysis datasets. Through years of exposure to complex simulation outputs, I have become adept at translating messy engineering data into clear, actionable insights.
