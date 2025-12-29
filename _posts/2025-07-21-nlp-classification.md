@@ -73,10 +73,11 @@ The following is the calculated sentiment for the train and test datasets. Note 
 ![sentiment]({{"/assets/post_figures/sentiment-analysis/sentiment_results.png" | relative_url }}){:style="width: 75%; height: auto; display: block; margin: 0 auto;"}
 
 ### Results
-Thus far, the text in the dataset have been normalized and then converted to a sentiment value. Multi-nomial classifier ML models are needed to map the true sentiment (stars) to the calculate sentiment. Three ML models: Logistic regression, SVM, Naïve Bayes, and Random Forest were used to perform multinomial classification. A comparison of the results was performed to show that logistic regression classification model performed the best outcome with an accuracy of nearly 70%.
+Thus far, the text in the dataset have been normalized and then converted to a sentiment value. Multi-nomial classifier ML models are needed to map the true sentiment (stars) to the calculated sentiment. Three ML models: Logistic regression, SVM, Naïve Bayes, and Random Forest were used to perform multinomial classification. Multinomial classifiers are able to predict more than two categories. A comparison of the results was performed shows that SVC classification model performed the best outcome with an accuracy of nearly 73%. Note that although the "logistic regression" model has "regression" in the name, it is confusingly a classifier model.
 ![5foldCV]({{"/assets/post_figures/sentiment-analysis/five_foldCV_results.png" | relative_url }}){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
-The following confusion matrix of SVC model, which had the best results out of the three models, shows the model's prediction capability. 
+The following confusion matrix of SVC model, which had the best results out of the three models, shows the model's prediction capability. Although the model is capable of predicting positive and negative review at a f1-score of 80%, it struggles to classify a neutral reviews (45%).  
 ![confmatrix]({{"/assets/post_figures/sentiment-analysis/linear_svc_results_confusion_matrix.png" | relative_url }}){:style="width: 60%; height: auto; display: block; margin: 0 auto;"}
 
+This NLP project tried to extract sentiment from Yelp reviews and correlate this to the number of stars of the review. While the multinomial models fit the mapped data well, the sentiment analyzer was unable to correlate the sentiment to the star rating.
 Find the project files on the [github repository](https://github.com/biman-zen/nlp-sentiment-analysis).
